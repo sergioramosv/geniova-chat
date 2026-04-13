@@ -1,4 +1,3 @@
-import "@tailwindcss/postcss";
 import "./globals.css";
 
 export const metadata = { title: "Geniova Chat" };
