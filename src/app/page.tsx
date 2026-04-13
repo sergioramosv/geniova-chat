@@ -116,15 +116,20 @@ function ChatApp() {
                 {showDate && (
                   <p className="text-[10px] text-gray-400 text-center my-3">{dateStr}</p>
                 )}
-                <div className={`flex ${isMe ? "justify-end" : "justify-start"}`}>
+                <div className={`flex flex-col ${isMe ? "items-end" : "items-start"}`}>
+                  <p className={`text-[10px] mb-1 ${isMe ? "text-right" : "text-left"} text-gray-400`}>
+                    <span className="font-semibold text-gray-500">{msg.user_name}</span>
+                    <span className="mx-1">·</span>
+                    <span>{msg.department}</span>
+                    <span className="mx-1">·</span>
+                    <span>{formatTime(msg.timestamp)}</span>
+                  </p>
                   <div className={`max-w-[80%] px-3 py-2 rounded-2xl text-sm ${
                     isMe
                       ? "bg-[#d4145a] text-white rounded-br-sm"
                       : "bg-white border border-gray-200 text-gray-700 rounded-bl-sm"
                   }`}>
-                    {!isMe && <p className="text-[10px] font-semibold text-[#d4145a] mb-0.5">{msg.user_name}</p>}
                     <p className="break-words leading-relaxed">{msg.message}</p>
-                    <p className={`text-[10px] text-right mt-1 ${isMe ? "text-pink-200" : "text-gray-300"}`}>{formatTime(msg.timestamp)}</p>
                   </div>
                 </div>
               </div>
